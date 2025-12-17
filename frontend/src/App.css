@@ -1,34 +1,148 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Theme Variables */
+:root[data-theme="dark"] {
+  /* Background Colors */
+  --color-background: #0a0e27;
+  --hero-bg: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+  --section-bg: #0f1229;
+  --footer-bg: #050813;
+  --navbar-bg: rgba(10, 14, 39, 0.8);
+  --navbar-bg-scrolled: rgba(10, 14, 39, 0.95);
+  --card-bg: #1a1f3a;
+  --cta-bg: #0f1229;
+  --tab-bg: #1a1f3a;
+  --tab-hover-bg: #252b4a;
+  --input-bg: #1a1f3a;
+  --progress-bg: rgba(59, 130, 246, 0.2);
+  --social-bg: #252b4a;
+  --accent-bg: rgba(59, 130, 246, 0.1);
+  --badge-bg: rgba(59, 130, 246, 0.15);
+  
+  /* Blue variants */
+  --blue-bg: rgba(59, 130, 246, 0.15);
+  --blue-color: #3b82f6;
+  
+  /* Purple variants */
+  --purple-bg: rgba(139, 92, 246, 0.15);
+  --purple-color: #8b5cf6;
+  
+  /* Green variants */
+  --green-bg: rgba(16, 185, 129, 0.15);
+  --green-color: #10b981;
+
+  /* Text Colors */
+  --text-primary: #f8f9fa;
+  --text-secondary: #a8b2d1;
+  
+  /* Accent Colors */
+  --accent-primary: #3b82f6;
+  --accent-secondary: #10b981;
+  --accent-hover: #2563eb;
+  --accent-foreground: #ffffff;
+  
+  /* Border Colors */
+  --navbar-border: rgba(248, 249, 250, 0.1);
+  --footer-border: rgba(248, 249, 250, 0.1);
+  --card-border: rgba(248, 249, 250, 0.1);
+  --input-border: rgba(248, 249, 250, 0.2);
+  
+  /* Shadow */
+  --shadow: rgba(0, 0, 0, 0.3);
+  --accent-shadow: rgba(59, 130, 246, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+:root[data-theme="light"] {
+  /* Background Colors */
+  --color-background: #ffffff;
+  --hero-bg: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  --section-bg: #f8f9fa;
+  --footer-bg: #e9ecef;
+  --navbar-bg: rgba(255, 255, 255, 0.8);
+  --navbar-bg-scrolled: rgba(255, 255, 255, 0.95);
+  --card-bg: #ffffff;
+  --cta-bg: #f8f9fa;
+  --tab-bg: #f8f9fa;
+  --tab-hover-bg: #e9ecef;
+  --input-bg: #ffffff;
+  --progress-bg: rgba(59, 130, 246, 0.15);
+  --social-bg: #f8f9fa;
+  --accent-bg: rgba(59, 130, 246, 0.08);
+  --badge-bg: rgba(59, 130, 246, 0.1);
+  
+  /* Blue variants */
+  --blue-bg: rgba(59, 130, 246, 0.1);
+  --blue-color: #2563eb;
+  
+  /* Purple variants */
+  --purple-bg: rgba(139, 92, 246, 0.1);
+  --purple-color: #7c3aed;
+  
+  /* Green variants */
+  --green-bg: rgba(16, 185, 129, 0.1);
+  --green-color: #059669;
+
+  /* Text Colors */
+  --text-primary: #1a202c;
+  --text-secondary: #4a5568;
+  
+  /* Accent Colors */
+  --accent-primary: #3b82f6;
+  --accent-secondary: #10b981;
+  --accent-hover: #2563eb;
+  --accent-foreground: #ffffff;
+  
+  /* Border Colors */
+  --navbar-border: rgba(26, 32, 44, 0.1);
+  --footer-border: rgba(26, 32, 44, 0.1);
+  --card-border: rgba(26, 32, 44, 0.1);
+  --input-border: rgba(26, 32, 44, 0.2);
+  
+  /* Shadow */
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-shadow: rgba(59, 130, 246, 0.2);
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-link {
-    color: #61dafb;
+body {
+  background-color: var(--color-background);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
 }
